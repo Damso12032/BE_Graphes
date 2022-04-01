@@ -36,6 +36,15 @@ public class Path {
             throws IllegalArgumentException {
         List<Arc> arcs = new ArrayList<Arc>();
         // TODO:
+        if(nodes.size()==0) {
+        	return new Path(graph);
+        }
+        
+        else if(nodes.size()==1) {
+        	return new Path(graph,nodes.get(0));
+        }
+        
+        
         return new Path(graph, arcs);
     }
 
@@ -57,6 +66,15 @@ public class Path {
             throws IllegalArgumentException {
         List<Arc> arcs = new ArrayList<Arc>();
         // TODO:
+        if(nodes.size()==0) {
+        	return new Path(graph);
+        }
+        
+        else if(nodes.size()==1) {
+        	return new Path(graph,nodes.get(0));
+        }
+        
+        
         return new Path(graph, arcs);
     }
 
@@ -198,11 +216,28 @@ public class Path {
      * 
      * @return true if the path is valid, false otherwise.
      * 
-     * @deprecated Need to be implemented.
+     * 
      */
     public boolean isValid() {
         // TODO:
-        return false;
+    	if(this.isEmpty()) {
+    		return true;
+    	}
+    	
+    	else if (this.size()==1) {
+    		return true;
+    	}
+    	
+    	else {
+    		Node origin = this.getOrigin();
+    		for(Arc monArc : this.arcs) {
+    			if(!origin.equals(monArc.getOrigin())) {
+    				return false;
+    			}
+    			origin = monArc.getDestination();
+    		}
+    	}
+        return true;
     }
 
     /**
@@ -210,7 +245,7 @@ public class Path {
      * 
      * @return Total length of the path (in meters).
      * 
-     * @deprecated Need to be implemented.
+     * 
      */
     public float getLength() {
     	float s=0;
@@ -228,11 +263,12 @@ public class Path {
      * @return Time (in seconds) required to travel this path at the given speed (in
      *         kilometers-per-hour).
      * 
-     * @deprecated Need to be implemented.
+     * 
      */
     public double getTravelTime(double speed) {
-        speed=speed/3.6;
-        double Traveltime=this.getLength()/speed;
+        // TODO:
+    	speed=speed/3.6;	//conversion km/h to m/s
+    	double Traveltime=this.getLength()/speed;
         return Traveltime;
     }
 
@@ -242,11 +278,15 @@ public class Path {
      * 
      * @return Minimum travel time to travel this path (in seconds).
      * 
-     * @deprecated Need to be implemented.
+     * 
      */
     public double getMinimumTravelTime() {
         // TODO:
-        return 0;
+    	double temps=0;
+    	for(Arc monArc : this.arcs) {
+    		temps += monArc.getMinimumTravelTime();
+    	}
+        return temps;
     }
 
 }
