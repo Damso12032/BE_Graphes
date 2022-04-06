@@ -60,14 +60,15 @@ public class Launch {
         final Drawing drawing = createDrawing();
 
         // TODO: Draw the graph on the drawing.
-    ²
+        drawing.drawGraph(graph);
         // TODO: Create a PathReader.
-        final PathReader pathReader = null;
+        final PathReader pathReader = new BinaryPathReader(new DataInputStream(new BufferedInputStream(new FileInputStream(pathName))));
 
         // TODO: Read the path.
-        final Path path = null;
+        final Path path = pathReader.readPath();
 
         // TODO: Draw the path.
+        drawing.drawPath(path);
     }
 
 }
