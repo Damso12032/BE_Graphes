@@ -44,7 +44,11 @@ public abstract class AbstractInputData {
     public Graph getGraph() {
         return graph;
     }
-
+    
+    public ArcInspector getArcins() {
+        return arcInspector;
+    }
+    
     /**
      * Retrieve the cost associated with the given arc according to the underlying
      * arc inspector.
@@ -79,11 +83,11 @@ public abstract class AbstractInputData {
      */
     
     /* Apparently, getMaximumSpeed is never initialized in arcInspectors.
-     * => Do not use.
+     * => Do not use.*/
     public int getMaximumSpeed() {
         return this.arcInspector.getMaximumSpeed();
     }
-    */
+    
     
     /**
      * Check if the given arc is allowed for the filter corresponding to this input.

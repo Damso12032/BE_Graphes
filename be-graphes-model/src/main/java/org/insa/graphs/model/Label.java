@@ -1,10 +1,10 @@
 package org.insa.graphs.model;
 
 public class Label implements Comparable<Label>{
-	private Node sommet_courant;
-	private boolean marque=false;
-	private double cout;
-	private Node pere=null;
+	protected Node sommet_courant;
+	protected boolean marque=false;
+	protected double cout;
+	protected Node pere=null;
 	public Label(Node sommet_courant, double cout) {
 		super();
 		this.sommet_courant = sommet_courant;
@@ -34,10 +34,12 @@ public class Label implements Comparable<Label>{
 	public void setPere(Node pere) {
 		this.pere = pere;
 	}
-	
+	public double getTotalCost() {
+		return getCost();
+	}
 	
 	
 	public int compareTo(Label other) {
-        return Double.compare(getCost(), other.getCost());
+        return Double.compare(getTotalCost(), other.getTotalCost());
     }
 }

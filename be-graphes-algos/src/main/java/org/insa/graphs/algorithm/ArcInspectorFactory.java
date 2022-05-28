@@ -32,12 +32,12 @@ public class ArcInspectorFactory {
                 return arc.getLength();
             }
 
-            /*
+            
             @Override
             public int getMaximumSpeed() {
                 return GraphStatistics.NO_MAXIMUM_SPEED;
             }
-            */
+            
 
             @Override
             public Mode getMode() {
@@ -64,12 +64,12 @@ public class ArcInspectorFactory {
                 return arc.getLength();
             }
 
-            /*
+            
             @Override
             public int getMaximumSpeed() {
                 return GraphStatistics.NO_MAXIMUM_SPEED;
             }
-            */
+            
 
             @Override
             public Mode getMode() {
@@ -95,12 +95,12 @@ public class ArcInspectorFactory {
                 return arc.getMinimumTravelTime();
             }
 
-            /*
+            
             @Override
             public int getMaximumSpeed() {
                 return GraphStatistics.NO_MAXIMUM_SPEED;
             }
-            */
+            
 
             @Override
             public Mode getMode() {
@@ -126,12 +126,12 @@ public class ArcInspectorFactory {
                 return arc.getMinimumTravelTime();
             }
 
-            /*
+            
             @Override
             public int getMaximumSpeed() {
                 return GraphStatistics.NO_MAXIMUM_SPEED;
             }
-            */
+            
             
             @Override
             public Mode getMode() {
@@ -167,12 +167,12 @@ public class ArcInspectorFactory {
                 return "Fastest path for pedestrian";
             }
 
-            /*
+            
             @Override
             public int getMaximumSpeed() {
                 return 5;
             }
-            */
+            
             
             @Override
             public Mode getMode() {

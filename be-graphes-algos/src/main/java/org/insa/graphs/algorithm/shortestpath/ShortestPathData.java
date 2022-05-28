@@ -9,7 +9,7 @@ public class ShortestPathData extends AbstractInputData {
 
     // Origin and destination nodes.
     private final Node origin, destination;
-
+    
     /**
      * Construct a new instance of ShortestPathInputData with the given parameters.
      * 
@@ -31,14 +31,18 @@ public class ShortestPathData extends AbstractInputData {
     public Node getOrigin() {
         return origin;
     }
-
+    
     /**
      * @return Destination node for the path.
      */
+ 
+    
     public Node getDestination() {
         return destination;
     }
-
+    
+    
+    
     @Override
     public String toString() {
         return "Shortest-path from #" + origin.getId() + " to #" + destination.getId() + " ["

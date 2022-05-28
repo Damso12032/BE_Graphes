@@ -35,17 +35,22 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         
      // Notify observers about the first event (origin processed).
         notifyOriginProcessed(data.getOrigin());
-        
-        
+        if(data.getOrigin()==null){
+        	return new ShortestPathSolution(data, Status.FEASIBLE,new Path(graph));
+        }
+        else if(data.getOrigin().getId()==data.getDestination().getId()) {
+        	return new ShortestPathSolution(data, Status.FEASIBLE,new Path(graph,data.getOrigin()));
+        }
+
         distances[data.getOrigin().getId()] = 0;
         for (Node node : graph.getNodes()) {
         	if(node==data.getOrigin()) {
-        		Label labelnode = new Label(node, 0);
+        		Label labelnode = newLabel(node, 0,data);
         		lablist.add(node.getId(),labelnode);
         		heap.insert(labelnode);
         	}
         	else {
-        		Label labelnode = new Label(node,  Double.POSITIVE_INFINITY);
+        		Label labelnode = newLabel(node,  Double.POSITIVE_INFINITY,data);
         		lablist.add(node.getId(),labelnode);
         	}
         }
@@ -55,9 +60,12 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         while(nonmarque) {
         	Label currentnode = heap.findMin();
         	currentnode.setMarque(true);
-        	System.out.println(currentnode.getCost());
+        	//System.out.println(currentnode.getCost());
         	notifyNodeMarked(currentnode.getSommet_courant());
         	for (Arc succes : currentnode.getSommet_courant().getSuccessors()) {
+        		if(!data.isAllowed(succes)) {
+        			continue;
+        		}
         		if (lablist.get(succes.getDestination().getId()).isMarque()) {
         			continue;
         		}
@@ -109,13 +117,11 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
             solution = new ShortestPathSolution(data, Status.OPTIMAL, new Path(graph, arcs));  
 				
         }
-        
-        
+
         return solution;
     }
+    protected Label newLabel(Node node,double cout, ShortestPathData data) {
+		return new Label(node,cout);
+	}
     
-    
-    
-    
-
 }
