@@ -10,30 +10,39 @@ public class Label implements Comparable<Label>{
 		this.sommet_courant = sommet_courant;
 		this.cout = cout;
 	}
+	
 	public Node getSommet_courant() {
 		return sommet_courant;
 	}
+	
 	public void setSommet_courant(Node sommet_courant) {
 		this.sommet_courant = sommet_courant;
 	}
+	
 	public boolean isMarque() {
 		return marque;
 	}
+	
 	public void setMarque(boolean marque) {
 		this.marque = marque;
 	}
+	
 	public double getCost() {
 		return cout;
 	}
+	
 	public void setCout(double cout) {
 		this.cout = cout;
 	}
+	
 	public Node getPere() {
 		return pere;
 	}
+	
 	public void setPere(Node pere) {
 		this.pere = pere;
 	}
+	
 	public double getTotalCost() {
 		return getCost();
 	}
