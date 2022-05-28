@@ -26,6 +26,7 @@ public class LabelStar extends Label implements Comparable<Label> {
 		}
 	}
 	
+	
 	@Override
 	public double getTotalCost() {
 		return getCost()+distmin;

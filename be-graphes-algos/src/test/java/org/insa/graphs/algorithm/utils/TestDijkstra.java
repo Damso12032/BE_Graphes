@@ -46,6 +46,7 @@ public class TestDijkstra {
 	private static BellmanFordAlgorithm bfANF1 ;
 	private static BellmanFordAlgorithm bfANF2;
 	
+	
 	 @BeforeClass
 	 public static void initAll() throws IOException{
 	// Visit these directory to see the list of available files on Commetud.
