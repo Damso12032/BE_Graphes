@@ -24,7 +24,9 @@ public class LabelStar extends Label implements Comparable<Label> {
 			}
 			this.distmin = (float)Point.distance(noeud.getPoint(),data.getDestination().getPoint())/(vitesse*1000.0f/3600.0f);
 		}
+	
 	}
+	
 	
 	@Override
 	public double getTotalCost() {

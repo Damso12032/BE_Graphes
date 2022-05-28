@@ -12,5 +12,6 @@ public class TestAStar extends TestDijkstra{
 	 public static DijkstraAlgorithm newDijkstraAlgorithm(ShortestPathData data) {
 		 return new AStarAlgorithm(data);
 	 }
-
 }
+
+
