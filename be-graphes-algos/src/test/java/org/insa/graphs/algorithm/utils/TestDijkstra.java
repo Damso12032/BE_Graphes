@@ -49,7 +49,8 @@ public class TestDijkstra {
 	
 	 @BeforeClass
 	 public static void initAll() throws IOException{
-	// Visit these directory to see the list of available files on Commetud.
+	
+		 // Visit these directory to see the list of available files on Commetud.
 		 final String mapName = "/home/sroche/Bureau/commetud/3eme Annee MIC/Graphes-et-Algorithmes/Maps/insa.mapgr";
 		 //final String pathName = "/home/sroche/Bureau/commetud/3eme Annee MIC/Graphes-et-Algorithmes/Paths/path_fr31insa_rangueil_insa.path";
 	
